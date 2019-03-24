@@ -1,0 +1,17 @@
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\FilterDigit.Tests\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\FilterDigit.Tests\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\FilterDigit.Tests\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\FilterDigit.Tests\bin\Debug\netcoreapp2.1\FilterDigit.Tests.deps.json
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\FilterDigit.Tests\bin\Debug\netcoreapp2.1\FilterDigit.Tests.runtimeconfig.json
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\FilterDigit.Tests\bin\Debug\netcoreapp2.1\FilterDigit.Tests.runtimeconfig.dev.json
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\FilterDigit.Tests\bin\Debug\netcoreapp2.1\FilterDigit.Tests.dll
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\FilterDigit.Tests\bin\Debug\netcoreapp2.1\FilterDigit.Tests.pdb
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\FilterDigit.Tests\bin\Debug\netcoreapp2.1\FilterDigit.dll
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\FilterDigit.Tests\bin\Debug\netcoreapp2.1\FilterDigit.pdb
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\FilterDigit.Tests\obj\Debug\netcoreapp2.1\FilterDigit.Tests.csprojAssemblyReference.cache
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\FilterDigit.Tests\obj\Debug\netcoreapp2.1\FilterDigit.Tests.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\FilterDigit.Tests\obj\Debug\netcoreapp2.1\FilterDigit.Tests.AssemblyInfoInputs.cache
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\FilterDigit.Tests\obj\Debug\netcoreapp2.1\FilterDigit.Tests.AssemblyInfo.cs
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\FilterDigit.Tests\obj\Debug\netcoreapp2.1\FilterDigit.Tests.csproj.CopyComplete
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\FilterDigit.Tests\obj\Debug\netcoreapp2.1\FilterDigit.Tests.dll
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\FilterDigit.Tests\obj\Debug\netcoreapp2.1\FilterDigit.Tests.pdb
