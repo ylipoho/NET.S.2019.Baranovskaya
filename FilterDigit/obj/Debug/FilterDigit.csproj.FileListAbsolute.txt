@@ -1,0 +1,6 @@
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\FilterDigit\bin\Debug\FilterDigit.dll
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\FilterDigit\bin\Debug\FilterDigit.pdb
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\FilterDigit\obj\Debug\FilterDigit.csprojAssemblyReference.cache
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\FilterDigit\obj\Debug\FilterDigit.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\FilterDigit\obj\Debug\FilterDigit.dll
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\FilterDigit\obj\Debug\FilterDigit.pdb
