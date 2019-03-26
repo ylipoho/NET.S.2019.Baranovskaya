@@ -8,7 +8,13 @@ namespace FindNthRoot
 {
     public class FindNthRootClass
     {
-
+        /// <summary>
+        /// Returns a specified number raised to the specified power 
+        /// </summary>
+        /// <param name="x">a double-precision floating-point number to be raised to a power</param>
+        /// <param name="power">a double-precision floating-point number that specifies a power</param>
+        /// <param name="e"> max calculation error</param>
+        /// <returns>the number x raised to the given power </returns>
         public double FindNthRoot(double x, int power, double e)
         {
             if (power <= 0 || e <= 0 || ( x<0 && power%2 != 0 ))

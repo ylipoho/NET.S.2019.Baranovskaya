@@ -8,6 +8,14 @@ namespace InsertNumber
 {
     public class InsertNumberClass
     {
+        /// <summary>
+        /// Return number with changed bits
+        /// </summary>
+        /// <param name="number1">number for insertion bits</param>
+        /// <param name="number2">number for getting bits</param>
+        /// <param name="i">start position for getting bits</param>
+        /// <param name="j">final position for getting bits</param>
+        /// <returns></returns>
         public int InsertNumber(int number1, int number2, int i, int j)
         {
             if (i < 0 || j < 0 || i>j)

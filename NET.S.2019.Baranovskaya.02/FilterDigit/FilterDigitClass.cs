@@ -8,8 +8,13 @@ namespace FilterDigit
 {
     public class FilterDigitClass
     {
-
-        public  List<int> FilterDigit(List<int> numbers, int digit)
+        /// <summary>
+        /// Returns elements of initial array that contains given digit
+        /// </summary>
+        /// <param name="numbers">initial list of integer numbers</param>
+        /// <param name="digit">digit for searching</param>
+        /// <returns></returns>
+        public List<int> FilterDigit(List<int> numbers, int digit)
         {
             if (numbers == null)
                 throw new ArgumentNullException();            

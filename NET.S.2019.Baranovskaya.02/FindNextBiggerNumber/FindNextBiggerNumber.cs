@@ -8,6 +8,43 @@ namespace FindNextBigger
 {
     public class FindNextBiggerNumberClass
     {
+        /// <summary>
+        /// Returns next bigger number that consists of the same digits, if it exists, and counts execution method time
+        /// </summary>
+        /// <param name="number">input number</param>
+        /// <param name="time"> execution method time </param>
+        /// <exception cref="ArgumentException">Thrown when parameter is less then zero</exception> 
+        /// <returns> next bigger number or null</returns>
+        public static int? FindNextBiggerNumberWithCountExecutionTimeByWatch(int number, out long time)
+        {
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+            int? result = FindNextBiggerNumber(number);
+            watch.Stop();
+            time = watch.ElapsedMilliseconds;
+            return result;
+        }
+
+        /// <summary>
+        /// Returns next bigger number that consists of the same digits, if it exists, and counts execution method time
+        /// </summary>
+        /// <param name="number">input number</param>
+        /// <param name="time"> execution method time </param>
+        /// <exception cref="ArgumentException">Thrown when parameter is less then zero</exception> 
+        /// <returns> next bigger number or null</returns>
+        public static int? FindNextBiggerNumberWithCountExecutionTimeByDate(int number, out TimeSpan time)
+        {
+            var start = DateTime.Now;
+            int? result = FindNextBiggerNumber(number);
+            time = DateTime.Now - start;
+            return result;
+        }
+
+        /// <summary>
+        /// Returns next bigger number that consists of the same digits, if it exists
+        /// </summary>
+        /// <param name="num">input number</param>
+        /// <exception cref="ArgumentException">Thrown when parameter is less then zero</exception> 
+        /// <returns> next bigger number or null</returns>
         public static int? FindNextBiggerNumber(int number)
         {
             if (number <= 0)
