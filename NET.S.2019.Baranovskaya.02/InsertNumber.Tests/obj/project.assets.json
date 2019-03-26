@@ -5835,9 +5835,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\admin\\Documents\\GitHub\\NET.S.2019.Baranovskaya\\NET.S.2019.Baranovskaya.02\\InsertNumber.Tests\\InsertNumber.Tests.csproj",
-      "projectName": "InsertNumber.Tests",
-      "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\NET.S.2019.Baranovskaya\\NET.S.2019.Baranovskaya.02\\InsertNumber.Tests\\InsertNumber.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\admin\\Documents\\GitHub\\NET.S.2019.Baranovskaya\\NET.S.2019.Baranovskaya.02\\InsertNumber.Tests\\InsertNumber.MSUnitTests.csproj",
+      "projectName": "InsertNumber.MSUnitTests",
+      "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\NET.S.2019.Baranovskaya\\NET.S.2019.Baranovskaya.02\\InsertNumber.Tests\\InsertNumber.MSUnitTests.csproj",
       "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\admin\\Documents\\GitHub\\NET.S.2019.Baranovskaya\\NET.S.2019.Baranovskaya.02\\InsertNumber.Tests\\obj\\",
       "projectStyle": "PackageReference",

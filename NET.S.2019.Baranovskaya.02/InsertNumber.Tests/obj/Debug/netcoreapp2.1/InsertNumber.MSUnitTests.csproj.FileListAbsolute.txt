@@ -1,0 +1,17 @@
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\InsertNumber.Tests\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\InsertNumber.Tests\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\InsertNumber.Tests\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\InsertNumber.Tests\bin\Debug\netcoreapp2.1\InsertNumber.MSUnitTests.deps.json
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\InsertNumber.Tests\bin\Debug\netcoreapp2.1\InsertNumber.MSUnitTests.runtimeconfig.json
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\InsertNumber.Tests\bin\Debug\netcoreapp2.1\InsertNumber.MSUnitTests.runtimeconfig.dev.json
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\InsertNumber.Tests\bin\Debug\netcoreapp2.1\InsertNumber.MSUnitTests.dll
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\InsertNumber.Tests\bin\Debug\netcoreapp2.1\InsertNumber.MSUnitTests.pdb
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\InsertNumber.Tests\bin\Debug\netcoreapp2.1\NET.S.2019.Baranovskaya.02.dll
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\InsertNumber.Tests\bin\Debug\netcoreapp2.1\NET.S.2019.Baranovskaya.02.pdb
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\InsertNumber.Tests\obj\Debug\netcoreapp2.1\InsertNumber.MSUnitTests.csprojAssemblyReference.cache
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\InsertNumber.Tests\obj\Debug\netcoreapp2.1\InsertNumber.MSUnitTests.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\InsertNumber.Tests\obj\Debug\netcoreapp2.1\InsertNumber.MSUnitTests.AssemblyInfoInputs.cache
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\InsertNumber.Tests\obj\Debug\netcoreapp2.1\InsertNumber.MSUnitTests.AssemblyInfo.cs
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\InsertNumber.Tests\obj\Debug\netcoreapp2.1\InsertNumber.MSUnitTests.csproj.CopyComplete
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\InsertNumber.Tests\obj\Debug\netcoreapp2.1\InsertNumber.MSUnitTests.dll
+C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.02\InsertNumber.Tests\obj\Debug\netcoreapp2.1\InsertNumber.MSUnitTests.pdb

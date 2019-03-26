@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework;
 using FindNextBigger;
 
@@ -15,9 +16,20 @@ namespace Tests
         [TestCase(3456432, ExpectedResult = 3462345)]
         [TestCase(10, ExpectedResult = null)]
         [TestCase(20, ExpectedResult = null)]
+        [TestCase(Int32.MaxValue, ExpectedResult = null)]
         public int? FindNextBiggerNumberPositiveTests(int inputNumber)
         {
             return FindNextBiggerNumberClass.FindNextBiggerNumber(inputNumber);            
+        }
+
+        
+        [Test]
+        public void GetNegativeNumberReturnArgumentException()
+        {
+            int inputNumber = -213;
+
+            Assert.Throws<ArgumentException>(() => 
+                        FindNextBiggerNumberClass.FindNextBiggerNumber(inputNumber));
         }
     }
 }
