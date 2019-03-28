@@ -1,0 +1,6 @@
+C:\Users\admin\source\repos\NET.S.2019.Baranovskaya.03\NET.S.2019.Baranovskaya.03\bin\Debug\NET.S.2019.Baranovskaya.03.dll
+C:\Users\admin\source\repos\NET.S.2019.Baranovskaya.03\NET.S.2019.Baranovskaya.03\bin\Debug\NET.S.2019.Baranovskaya.03.pdb
+C:\Users\admin\source\repos\NET.S.2019.Baranovskaya.03\NET.S.2019.Baranovskaya.03\obj\Debug\GDC.csprojAssemblyReference.cache
+C:\Users\admin\source\repos\NET.S.2019.Baranovskaya.03\NET.S.2019.Baranovskaya.03\obj\Debug\GDC.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\NET.S.2019.Baranovskaya.03\NET.S.2019.Baranovskaya.03\obj\Debug\NET.S.2019.Baranovskaya.03.dll
+C:\Users\admin\source\repos\NET.S.2019.Baranovskaya.03\NET.S.2019.Baranovskaya.03\obj\Debug\NET.S.2019.Baranovskaya.03.pdb

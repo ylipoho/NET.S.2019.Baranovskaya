@@ -1,0 +1,6 @@
+C:\Users\admin\source\repos\NET.S.2019.Baranovskaya.03\StringExtension\bin\Debug\StringExtension.dll
+C:\Users\admin\source\repos\NET.S.2019.Baranovskaya.03\StringExtension\bin\Debug\StringExtension.pdb
+C:\Users\admin\source\repos\NET.S.2019.Baranovskaya.03\StringExtension\obj\Debug\StringExtension.csprojAssemblyReference.cache
+C:\Users\admin\source\repos\NET.S.2019.Baranovskaya.03\StringExtension\obj\Debug\StringExtension.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\NET.S.2019.Baranovskaya.03\StringExtension\obj\Debug\StringExtension.dll
+C:\Users\admin\source\repos\NET.S.2019.Baranovskaya.03\StringExtension\obj\Debug\StringExtension.pdb
