@@ -26,6 +26,18 @@ namespace InsertNumber.Tests
             Assert.ThrowsException<ArgumentException>(() => new InsertNumberClass().InsertNumber(8, 15, 8, 2));
         }
 
+        [TestMethod]
+        public void Get_j_More_Than_31_Return_ArgumentExceptionTest()
+        {
+            Assert.ThrowsException<ArgumentException>(() => new InsertNumberClass().InsertNumber(8, 15, 4, 35));
+        }
+
+        [TestMethod]
+        public void Get_i_More_Then_31_Return_ArgumentExceptionTest()
+        {
+            Assert.ThrowsException<ArgumentException>(() => new InsertNumberClass().InsertNumber(8, 15, 8, 32));
+        }
+
 
         [TestMethod]
         public void Get_8_15_3_8_Return_120_Test()

@@ -74,7 +74,7 @@ namespace FindNextBigger
             {
                 // just swap 2 last 
                 if (l == num.Length - 2)
-                {
+                {   
                     char buf = num[l];
                     num[l] = num[l + 1];
                     num[l + 1] = buf;

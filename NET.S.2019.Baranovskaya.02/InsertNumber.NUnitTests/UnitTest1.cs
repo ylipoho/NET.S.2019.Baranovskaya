@@ -26,6 +26,20 @@ namespace Tests
 
 
         [Test]
+        public void Get_j_More_Than_31_Return_ArgumentExceptionTest()
+        {
+            Assert.Throws<ArgumentException>(() => new InsertNumberClass().InsertNumber(8, 15, 4, 35));
+        }
+
+        [Test]
+        public void Get_i_More_Then_31_Return_ArgumentExceptionTest()
+        {
+            Assert.Throws<ArgumentException>(() => new InsertNumberClass().InsertNumber(8, 15, 8, 32));
+        }
+
+
+
+        [Test]
         public void Get_8_15_3_8_Return_120_Test()
         {
             int expected = 120;

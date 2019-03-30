@@ -18,7 +18,7 @@ namespace InsertNumber
         /// <returns></returns>
         public int InsertNumber(int number1, int number2, int i, int j)
         {
-            if (i < 0 || j < 0 || i>j)
+            if (i < 0 || j < 0 || i>j || i > 31 || j > 31)
                 throw new ArgumentException();
 
             int bitNum = j - i + 1;
