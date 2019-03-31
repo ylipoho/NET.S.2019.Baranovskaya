@@ -1646,13 +1646,13 @@
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
-      "GDC/1.0.0": {
+      "GCD/1.0.0": {
         "type": "project",
         "compile": {
-          "bin/placeholder/GDC.dll": {}
+          "bin/placeholder/GCD.dll": {}
         },
         "runtime": {
-          "bin/placeholder/GDC.dll": {}
+          "bin/placeholder/GCD.dll": {}
         }
       }
     }
@@ -5751,15 +5751,15 @@
         "system.xml.xpath.xmldocument.nuspec"
       ]
     },
-    "GDC/1.0.0": {
+    "GCD/1.0.0": {
       "type": "project",
-      "path": "../NET.S.2019.Baranovskaya.03/GDC.csproj",
-      "msbuildProject": "../NET.S.2019.Baranovskaya.03/GDC.csproj"
+      "path": "../NET.S.2019.Baranovskaya.03/GCD.csproj",
+      "msbuildProject": "../NET.S.2019.Baranovskaya.03/GCD.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
-      "GDC >= 1.0.0",
+      "GCD >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 15.8.0",
       "Microsoft.NETCore.App >= 2.1.0",
       "NUnit3TestAdapter >= 3.10.0",
@@ -5773,9 +5773,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\admin\\Documents\\GitHub\\NET.S.2019.Baranovskaya\\NET.S.2019.Baranovskaya.03\\GDC.Tests\\GDC.Tests.csproj",
-      "projectName": "GDC.Tests",
-      "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\NET.S.2019.Baranovskaya\\NET.S.2019.Baranovskaya.03\\GDC.Tests\\GDC.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\admin\\Documents\\GitHub\\NET.S.2019.Baranovskaya\\NET.S.2019.Baranovskaya.03\\GDC.Tests\\GCD.Tests.csproj",
+      "projectName": "GCD.Tests",
+      "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\NET.S.2019.Baranovskaya\\NET.S.2019.Baranovskaya.03\\GDC.Tests\\GCD.Tests.csproj",
       "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\admin\\Documents\\GitHub\\NET.S.2019.Baranovskaya\\NET.S.2019.Baranovskaya.03\\GDC.Tests\\obj\\",
       "projectStyle": "PackageReference",
@@ -5796,8 +5796,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\admin\\Documents\\GitHub\\NET.S.2019.Baranovskaya\\NET.S.2019.Baranovskaya.03\\NET.S.2019.Baranovskaya.03\\GDC.csproj": {
-              "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\NET.S.2019.Baranovskaya\\NET.S.2019.Baranovskaya.03\\NET.S.2019.Baranovskaya.03\\GDC.csproj"
+            "C:\\Users\\admin\\Documents\\GitHub\\NET.S.2019.Baranovskaya\\NET.S.2019.Baranovskaya.03\\NET.S.2019.Baranovskaya.03\\GCD.csproj": {
+              "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\NET.S.2019.Baranovskaya\\NET.S.2019.Baranovskaya.03\\NET.S.2019.Baranovskaya.03\\GCD.csproj"
             }
           }
         }

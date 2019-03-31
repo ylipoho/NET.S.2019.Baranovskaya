@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GDC", "NET.S.2019.Baranovskaya.03\GDC.csproj", "{A50E0422-416A-492C-B40F-92BC44272190}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCD", "NET.S.2019.Baranovskaya.03\GCD.csproj", "{A50E0422-416A-492C-B40F-92BC44272190}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringExtension", "StringExtension\StringExtension.csproj", "{FA96BCDC-0DD5-492E-92B4-66C230F7BBC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringExtension.Tests", "StringExtension.Tests\StringExtension.Tests.csproj", "{537989D6-7746-498A-B9A6-DC643570D3C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringExtension.Tests", "StringExtension.Tests\StringExtension.Tests.csproj", "{537989D6-7746-498A-B9A6-DC643570D3C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GDC.Tests", "GDC.Tests\GDC.Tests.csproj", "{E8AB5B78-DBAF-403C-84F6-964214DBA4FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GCD.Tests", "GDC.Tests\GCD.Tests.csproj", "{E8AB5B78-DBAF-403C-84F6-964214DBA4FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
