@@ -3,8 +3,16 @@ using StringExtension;
 
 namespace Tests
 {
+    /// <summary>
+    /// Tests for methods of StringExtension class
+    /// </summary>
     public class Tests
     {
+        /// <summary>
+        /// Tests for double.ToBinaryString() method
+        /// </summary>
+        /// <param name="number">input double value</param>
+        /// <returns>binary string extension</returns>
         [TestCase(-255.255, ExpectedResult = "1100000001101111111010000010100011110101110000101000111101011100")]
         [TestCase(255.255, ExpectedResult = "0100000001101111111010000010100011110101110000101000111101011100")]
         [TestCase(4294967295.0, ExpectedResult = "0100000111101111111111111111111111111111111000000000000000000000")]
@@ -15,10 +23,11 @@ namespace Tests
         [TestCase(double.NegativeInfinity, ExpectedResult = "1111111111110000000000000000000000000000000000000000000000000000")]
         [TestCase(double.PositiveInfinity, ExpectedResult = "0111111111110000000000000000000000000000000000000000000000000000")]
         [TestCase(-0.0, ExpectedResult = "1000000000000000000000000000000000000000000000000000000000000000")]
-        [TestCase(0.0, ExpectedResult =  "0000000000000000000000000000000000000000000000000000000000000000")]
+        [TestCase(0.0, ExpectedResult = "0000000000000000000000000000000000000000000000000000000000000000")]
         public string PositiveTest(double number)
         {
-            return number.ToBinaryString();
+            string result = number.ToBinaryString();
+            return result;
         }
     }
 }
