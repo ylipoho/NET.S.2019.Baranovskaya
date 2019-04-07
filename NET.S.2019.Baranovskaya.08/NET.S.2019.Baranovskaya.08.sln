@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET.S.2019.Baranovskaya.08", "NET.S.2019.Baranovskaya.08\NET.S.2019.Baranovskaya.08.csproj", "{5A181C6F-DA93-412C-AB0B-9839BCAD9235}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankSystem", "BankSystem\BankSystem.csproj", "{D29BF607-6DE3-43ED-BECB-1136F6D5ACBD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5A181C6F-DA93-412C-AB0B-9839BCAD9235}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A181C6F-DA93-412C-AB0B-9839BCAD9235}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A181C6F-DA93-412C-AB0B-9839BCAD9235}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D29BF607-6DE3-43ED-BECB-1136F6D5ACBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D29BF607-6DE3-43ED-BECB-1136F6D5ACBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D29BF607-6DE3-43ED-BECB-1136F6D5ACBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D29BF607-6DE3-43ED-BECB-1136F6D5ACBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

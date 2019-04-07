@@ -20,6 +20,7 @@ namespace BankSystem
         private string secondName;
         private int sum;
         private double bonusScore;
+        
 
         public string FullName => String.Format("{0} {1}", firstName, secondName);
 
