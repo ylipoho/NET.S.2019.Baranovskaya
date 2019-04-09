@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BookTask
+namespace BookListService
 {
     public class Book :IComparable, IEquatable<Book>
     {
@@ -18,7 +14,7 @@ namespace BookTask
         int PageNum;
         double Price;
 
-        Book(int ISBN, string Author, string Name, string PublishingHouse, int Year, int PageNum, double Price)
+        public Book(int ISBN, string Author, string Name, string PublishingHouse, int Year, int PageNum, double Price)
         {
             this.ISBN = ISBN;
             this.Author = Author;
@@ -29,6 +25,7 @@ namespace BookTask
             this.Price = Price;
         }
 
+        #region interface methods
         /// <summary>
         /// Compares this instance to a Book object and returns an indication of their relative values.
         /// </summary>
@@ -76,6 +73,7 @@ namespace BookTask
 
             return true;
         }
+        #endregion
 
         #region Object methods
 

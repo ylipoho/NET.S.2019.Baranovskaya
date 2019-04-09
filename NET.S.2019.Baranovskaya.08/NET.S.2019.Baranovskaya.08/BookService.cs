@@ -1,19 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
-using BookTask;
 
-namespace NET.S._2019.Baranovskaya._08
+namespace BookListService
 {
-    class BookListService
+    public class BookService
     {
         List<Book> bookList;
 
         public bool AddBook(Book book)
         {
+            if (!FindBook(book))
+            { 
+                // add
+            }
+            else
+            {
+                return false;
+            }
+
+            return true;
+        }
+        
+        public bool RemoveBook(Book book)
+        {
             return true;
         }
 
-        public bool RemoveBook(Book book)
+        public bool FindBook(Book book)
         {
             return true;
         }
