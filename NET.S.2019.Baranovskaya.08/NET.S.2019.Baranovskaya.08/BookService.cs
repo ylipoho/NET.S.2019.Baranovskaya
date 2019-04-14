@@ -98,7 +98,7 @@ namespace BookListService
         /// <param name="path">file path</param>
         public void SaveBookListStorageFromBinaryFile(string path)
         {
-            using (BinaryWriter bw = new BinaryWriter(File.Open(path, FileMode.OpenOrCreate)))
+            using (BinaryWriter bw = new BinaryWriter(File.Open(path, FileMode.Create)))
             {
                 foreach (Book book in this.BookListStorage)
                 {
