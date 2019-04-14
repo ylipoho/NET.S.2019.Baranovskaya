@@ -1,3 +1,5 @@
+## Description: 
+
 1. Create a class that allows to get GCD using Euclidean algorythm for 2, 3 and more integer numbers. Class methods also
 must determine the time required to complete the calculation.
 Add to the class methods that implement the Stein algorithm
