@@ -1,69 +1,89 @@
-﻿using System;
-using BookListService;
-
-namespace BookConsoleApplication
+﻿namespace BookConsoleApplication
 {
-    class Program
-    {
-        // 1. print list
-        // 2. add book
-        // 3. remove book
-        // 4. find book by tag
-        // 5. sort books by tag
-        // 6. exit
+    using System;
+    using System.Collections.Generic;
+    using BookListService;
 
+    public class Program
+    {
         static void Main(string[] args)
         {
-            string answer = String.Empty;
+            Book book1 = new Book(123, "Николай Некрасов", "Сборник поэм", "Питер", 2016, 102, 23.12);
+            Book book2 = new Book(124, "Михаил Булгаков", "Мастер и Маргарита", "АСТ", 2011, 416, 25.05);
+            Book book3 = new Book(125, "Федор Достоевский", "Идиот", "Азбука", 2012, 100, 9.44);
+            Book book4 = new Book(126, "Николай Гоголь", "Ночь перед Рождеством", "Росмэн-пресс", 2016, 96, 4.53);
+            Book book5 = new Book(127, "Евгений Замятин", "Мы", "Азбука", 2018, 288, 9.44);
 
-            while (answer != "5")
+            BookService bookService = new BookService();
+
+            Console.WriteLine("Try to add the book5 once again...");
+            try
             {
-                int answerNumber;
-                
-                if (int.TryParse(answer, out answerNumber))
-                {
-                    switch (answerNumber)
-                    {
-                        case 1:
-                            Console.WriteLine("Please, enter ISBN, author, name, publishing house, year, num of pages and price separated by space:");
-                            string bookInfo = Console.ReadLine();
-                            string[] bookStrings = bookInfo.Split(' ');
-
-                            if (int.TryParse(bookStrings[0], out int isbn) && int.TryParse(bookStrings[4], out int year) &&
-                                int.TryParse(bookStrings[5], out int pageNum) && int.TryParse(bookStrings[6], out int price))
-                            {
-                                Book book = new Book(isbn, bookStrings[1], bookStrings[2], bookStrings[3], year,
-                                     pageNum, price);
-                                if (new BookListService.BookService().AddBook(book))
-                                {
-                                    Console.WriteLine("Done.");
-                                }
-                                else
-                                {
-                                    Console.WriteLine("Already exist.");
-                                }
-                            }
-                            break;
-                        case 2:
-                            break;
-                        case 3:
-                            break;
-                        case 4:
-                            break;
-                        case 5:
-                            break;
-                        default:
-                            Console.WriteLine("Please, enter number from 1 to 5.");
-                            break;
-
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Please, enter number from 1 to 5.");
-                }
+                bookService.AddBook(book1);
+                bookService.AddBook(book2);
+                bookService.AddBook(book3);
+                bookService.AddBook(book4);
+                bookService.AddBook(book5);
+                bookService.AddBook(book5);
             }
-            Console.WriteLine("Press any key for exit...");
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message.ToString());
+            }
+
+            Console.WriteLine("Try to print 5 books...");
+
+            bookService.PrintBookList();
+
+            try
+            {
+                bookService.RemoveBook(book5);
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message.ToString());
+            }
+
+            Book book6 = new Book(128, "Борис Пастернак", "Доктор Живаго", "Азбука", 2013, 608, 9.97);
+
+            Console.WriteLine("Try to remove a book that the book list doesn't contain...");
+
+            try
+            {
+                bookService.RemoveBook(book6);
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message.ToString());
+            }
+
+            Console.WriteLine("Try to print 1 book with Name = 'Сборник поэм'...");
+            List<Book> bookList = bookService.FindBookByTag(BookService.Tag.Name, "Сборник поэм");
+
+            foreach (Book book in bookList)
+            {
+                Console.WriteLine(book.ToString());
+            }
+
+            Console.WriteLine("Try to print 2 book with Year = 2016...");
+
+            List<Book> bookList2 = bookService.FindBookByTag(BookService.Tag.Year, 2016);
+
+            foreach (Book book in bookList2)
+            {
+                Console.WriteLine(book.ToString());
+            }
+
+            BookService bookService2 = new BookService();
+
+            bookService.SaveBookListStorageFromBinaryFile(@"C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.08\books.bin");
+
+            bookService2.LoadBookListStorageFromBinaryFile(@"C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.08\books.bin");
+            Console.WriteLine();
+
+            Console.WriteLine("Try to print 4 books...");
+
+            bookService2.PrintBookList();
             Console.ReadKey();
         }
     }

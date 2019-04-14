@@ -1,30 +1,72 @@
-﻿using System;
-
+﻿// <copyright file="Book.cs" company="companyName">
+// Copyright (c) companyName. All rights reserved.
+// </copyright>
 namespace BookListService
 {
-    public class Book :IComparable, IEquatable<Book>
+    using System;
+    using System.Collections.Generic;
+
+    /// <summary>
+    /// Class that describes the book
+    /// </summary>
+    public class Book : IComparable, IEquatable<Book>
     {
-        //(ISBN, автор, название, издательство, год издания, количество страниц, цена)
-
-        int ISBN;
-        string Author;
-        string Name;
-        string PublishingHouse;
-        int Year;
-        int PageNum;
-        double Price;
-
-        public Book(int ISBN, string Author, string Name, string PublishingHouse, int Year, int PageNum, double Price)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Book"/> class
+        /// </summary>
+        /// <param name="isbn">unique number</param>
+        /// <param name="author">author of the book</param>
+        /// <param name="name">name of the book</param>
+        /// <param name="publishingHouse">publishing house of the book</param>
+        /// <param name="year">year of the book</param>
+        /// <param name="pageNum">number of pages</param>
+        /// <param name="price">price of the book</param>
+        public Book(int isbn, string author, string name, string publishingHouse, int year, int pageNum, double price)
         {
-            this.ISBN = ISBN;
-            this.Author = Author;
-            this.Name = Name;
-            this.PublishingHouse = PublishingHouse;
-            this.Year = Year;
-            this.PageNum = PageNum;
-            this.Price = Price;
+            this.ISBN = isbn;
+            this.Author = author;
+            this.Name = name;
+            this.PublishingHouse = publishingHouse;
+            this.Year = year;
+            this.PageNum = pageNum;
+            this.Price = price;
         }
 
+        /// <summary>
+        /// Gets unique number of the book
+        /// </summary>
+        public int ISBN { get; }
+
+        /// <summary>
+        /// Gets author of the book
+        /// </summary>
+        public string Author { get; }
+
+        /// <summary>
+        /// Gets name of the book
+        /// </summary>
+        public string Name { get; }
+
+        /// <summary>
+        /// Gets publishing house of the book
+        /// </summary>
+        public string PublishingHouse { get; }
+
+        /// <summary>
+        /// Gets year of the book
+        /// </summary>
+        public int Year { get; }
+
+        /// <summary>
+        /// Gets number of pages 
+        /// </summary>
+        public int PageNum { get; }
+
+        /// <summary>
+        /// Gets or sets price of the book
+        /// </summary>
+        public double Price { get; set; }
+        
         #region interface methods
         /// <summary>
         /// Compares this instance to a Book object and returns an indication of their relative values.
@@ -44,7 +86,7 @@ namespace BookListService
                 throw new ArgumentException();
             }
 
-            return this.ISBN-book.ISBN;
+            return this.ISBN - book.ISBN;
         }
         
         /// <summary>
@@ -83,8 +125,16 @@ namespace BookListService
         /// <returns>A System.String representing of Book instance</returns>
         public override string ToString()
         {
-            return String.Format("isbn: {0}, author: {1}, name: \"{2}\", publising house: \"{3}\", year: \"{4}\", pages: {5}, price: {6}",
-                                 this.ISBN, this.Author, this.Name, this.PublishingHouse, this.Year, this.PageNum, this.Price);
+            return string.Format(
+                "isbn: {0}, author: {1}, name: \"{2}\", publising house: \"{3}\", year: {4}, pages: {5}, price: {6}", 
+                this.ISBN, 
+                this.Author, 
+                this.Name, 
+                this.PublishingHouse, 
+                this.Year, 
+                this.PageNum, 
+                this.Price
+                );
         }
 
         /// <summary>
@@ -115,7 +165,7 @@ namespace BookListService
 
             Book b = obj as Book;
             
-            if ((this.ISBN != b.ISBN) || (this.Author != b.Author) ||(this.Name != b.Name) || (this.PublishingHouse != b.PublishingHouse) ||
+            if ((this.ISBN != b.ISBN) || (this.Author != b.Author) || (this.Name != b.Name) || (this.PublishingHouse != b.PublishingHouse) ||
                 (this.Year != b.Year) || (this.PageNum != b.PageNum) || (this.Price != b.Price))
             {
                 return false;
@@ -130,18 +180,14 @@ namespace BookListService
         /// <returns>The hash code for this instance</returns> 
         public override int GetHashCode()
         {
-            int prime = 21;
-            int result = 1;
-
-            result = result * prime + this.ISBN.GetHashCode();
-            result = result * prime + this.Author.GetHashCode();
-            result = result * prime + this.Name.GetHashCode();
-            result = result * prime + this.PublishingHouse.GetHashCode();
-            result = result * prime + this.Year.GetHashCode();
-            result = result * prime + this.PageNum.GetHashCode();
-            result = result * prime + this.Price.GetHashCode();
-
-            return result;
+            var hashCode = -2110119757;
+            hashCode = hashCode * -1521134295 + ISBN.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Author);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Name);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(PublishingHouse);
+            hashCode = hashCode * -1521134295 + Year.GetHashCode();
+            hashCode = hashCode * -1521134295 + PageNum.GetHashCode();
+            return hashCode;
         }
         
         #endregion
