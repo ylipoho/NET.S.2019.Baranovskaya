@@ -3,7 +3,6 @@
 // </copyright>
 namespace BankSystem
 {
-    using BankSystem.Gradations;
     using System;
     using System.IO;
 
@@ -12,6 +11,11 @@ namespace BankSystem
     /// </summary>
     public class BankAccount
     {
+        /// <summary>
+        /// level of the bonus
+        /// </summary>
+        private int bonusScore;
+
         /// <summary>
         /// unique number of the account
         /// </summary>
@@ -28,23 +32,17 @@ namespace BankSystem
         private string secondName;
         
         /// <summary>
-        /// level of the bonus
-        /// </summary>
-        public int bonusScore;
-
-        /// <summary>
         /// Stored sum of the account
         /// </summary>
         private double sum;
 
         /// <summary>
-        /// Gets or sets status of the account
+        /// Initializes a new instance of the <see cref="BankAccount"/> class
         /// </summary>
-        public bool IsOpened { get; internal set; }
-
-        /// <summary>
-        /// Initializes a new instance of <see cref="BankAccount"/> class
-        /// </summary>
+        /// <param name="number">unique number</param>
+        /// <param name="firstName">user first name</param>
+        /// <param name="secondName">user second name</param>
+        /// <param name="accountGradation">account gradation</param>
         internal BankAccount(int number, string firstName, string secondName, Gradation accountGradation)
         {
             this.number = number;
@@ -56,7 +54,17 @@ namespace BankSystem
             this.bonusScore = 0;
         }
 
-        internal BankAccount (int number, string firstName, string secondName, Gradation accountGradation, double sum, bool isOpened, int bonusScore)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BankAccount"/> class
+        /// </summary>
+        /// <param name="number">unique number</param>
+        /// <param name="firstName">user first name</param>
+        /// <param name="secondName">user second name</param>
+        /// <param name="accountGradation">account gradation</param>
+        /// <param name="sum">money amount</param>
+        /// <param name="isOpened">account status</param>
+        /// <param name="bonusScore">bonus score</param>
+        internal BankAccount(int number, string firstName, string secondName, Gradation accountGradation, double sum, bool isOpened, int bonusScore)
         {
             this.number = number;
             this.firstName = firstName;
@@ -68,12 +76,17 @@ namespace BankSystem
         }
 
         /// <summary>
-        /// Describes account gradation and privilege
+        /// Gets a value indicating whether the account is opened
+        /// </summary>
+        public bool IsOpened { get; internal set; }
+
+        /// <summary>
+        /// Gets account gradation and privilege
         /// </summary>
         public Gradation AccountGradation { get; private set; }
 
         /// <summary>
-        /// Gets or sets amount of money
+        /// Gets amount of money
         /// </summary>
         public double Sum
         {
@@ -81,6 +94,12 @@ namespace BankSystem
             private set { this.sum = value;  }
         }
         
+        /// <summary>
+        /// Withdraws given amount of money from the bank account
+        /// </summary>
+        /// <param name="money">money amount</param>
+        /// <returns>true if successfully; otherwise, false</returns>
+        /// <exception cref="ArgumentException">if money is less than zero</exception>
         public bool Withdraw(int money)
         {
             if (this.IsOpened)
@@ -94,7 +113,7 @@ namespace BankSystem
                     else
                     {
                         this.Sum -= money;
-                        ChangeBonusScore(-money);
+                        this.ChangeBonusScore(-money);
                         return true;
                     }
                 }
@@ -109,12 +128,17 @@ namespace BankSystem
             }
         }
 
+        /// <summary>
+        /// Deposits given sum from the account
+        /// </summary>
+        /// <param name="money">money amount</param>
+        /// <returns>true if successfully</returns>
         public bool Deposit(int money)
         {
             if (this.IsOpened)
             { 
                 this.Sum += money;
-                ChangeBonusScore(money);
+                this.ChangeBonusScore(money);
                 return true;
             }
             else
@@ -123,20 +147,10 @@ namespace BankSystem
             }
         }
 
-
-        private void ChangeBonusScore(int money)
-        {
-            if (money > 0)
-            {
-                this.bonusScore += AccountGradation.GetBonusScoreIncrease(money);
-            }
-            else
-            {
-                this.bonusScore += AccountGradation.GetBonusScoreDecrease(money);
-            }
-        }
-        
-
+        /// <summary>
+        /// Writes account list to binary file
+        /// </summary>
+        /// <param name="bw">binary writer</param>
         internal void WriteToFile(BinaryWriter bw)
         {
             bw.Write(this.number);
@@ -147,6 +161,21 @@ namespace BankSystem
             bw.Write(this.IsOpened);
             bw.Write(this.AccountGradation.Name);
         }
-        
+
+        /// <summary>
+        /// Changes account bonus score
+        /// </summary>
+        /// <param name="money">money amount</param>
+        private void ChangeBonusScore(int money)
+        {
+            if (money > 0)
+            {
+                this.bonusScore += this.AccountGradation.GetBonusScoreIncrease(money);
+            }
+            else
+            {
+                this.bonusScore += this.AccountGradation.GetBonusScoreDecrease(money);
+            }
+        }
     }
 }

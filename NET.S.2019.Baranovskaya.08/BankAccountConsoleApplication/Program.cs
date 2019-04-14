@@ -11,7 +11,7 @@
             BankService bankService = new BankService();
             BankAccount account1 = bankService.CreateAccount("John", "Smith", new GoldGradation());
             
-            Console.WriteLine("Try to withdraw 12...");
+            Console.WriteLine("Try to withdraw 120...");
 
             try
             {
@@ -22,13 +22,10 @@
             {
                 Console.WriteLine(ex.Message.ToString());
             }
-
-            Console.WriteLine("Bonus score is " + account1.bonusScore);
-
+            
             account1.Deposit(200);
 
             Console.WriteLine("+200: Successfully");
-            Console.WriteLine("Bonus score is "+ account1.bonusScore);
 
             try
             {
@@ -39,11 +36,7 @@
             {
                 Console.WriteLine(ex.Message.ToString());
             }
-
-            Console.WriteLine("Bonus score is " + account1.bonusScore);
-
-
-
+            
             bankService.SaveBankAccountsListToBinaryFile(@"C:\Users\admin\Documents\GitHub\NET.S.2019.Baranovskaya\NET.S.2019.Baranovskaya.08\accounts.bin");
 
             BankService banksService2 = new BankService();

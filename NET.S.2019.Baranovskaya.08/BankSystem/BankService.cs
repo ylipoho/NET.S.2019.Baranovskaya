@@ -1,37 +1,61 @@
-﻿namespace BankSystem
+﻿// <copyright file="BankService.cs" company="companyName">
+// Copyright (c) companyName. All rights reserved.
+// </copyright>
+namespace BankSystem
 {
     using System.Collections.Generic;
     using System.IO;
     using Gradations;
 
+    /// <summary>
+    /// Class that describes bank account list and contains method for working with accounts
+    /// </summary>
     public class BankService
     {
+        /// <summary>
+        /// Contains bank accounts
+        /// </summary>
+        private List<BankAccount> bankAccounts;
 
-        List<BankAccount> bankAccounts;
-
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BankService"/> class 
+        /// </summary>
         public BankService()
         {
-            bankAccounts = new List<BankAccount>();
+            this.bankAccounts = new List<BankAccount>();
         }
 
+        /// <summary>
+        /// Creates a new instance of the <see cref="BankAccount"/> class and adds it to account list
+        /// </summary>
+        /// <param name="firstName">user first name</param>
+        /// <param name="secondName">user second name</param>
+        /// <param name="gradation">account gradation</param>
+        /// <returns>bank account</returns>
         public BankAccount CreateAccount(string firstName, string secondName, Gradation gradation)
         {
-            int number = bankAccounts.Count + 1;
+            int number = this.bankAccounts.Count + 1;
             BankAccount bankAccount = new BankAccount(number, firstName, secondName, gradation);
-            bankAccounts.Add(bankAccount);
+            this.bankAccounts.Add(bankAccount);
             return bankAccount;
         }
 
+        /// <summary>
+        /// Closes bank account and delete it from account list
+        /// </summary>
+        /// <param name="bankAccount">bank account</param>
+        /// <returns>true if successfully</returns>
         public bool CloseAccount(BankAccount bankAccount)
         {
-            for (int i=0; i< bankAccounts.Count; i++)
+            for (int i = 0; i < this.bankAccounts.Count; i++)
             {
-                if (bankAccount.Equals(bankAccounts[i]))
+                if (bankAccount.Equals(this.bankAccounts[i]))
                 {
-                    bankAccounts[i].IsOpened = false;
+                    this.bankAccounts[i].IsOpened = false;
                     return true;
                 }
             }
+
             return false;
         }
 
@@ -57,6 +81,7 @@
                         string gradationName = br.ReadString();
                         
                         Gradation gradation = null;
+
                         switch (gradationName)
                         {
                             case "Base":
@@ -69,6 +94,7 @@
                                 gradation = new PlatinumGradation();
                                 break;
                         }
+
                         this.bankAccounts.Add(new BankAccount(number, firstName, secondName, gradation, sum, isOpened, bonusScore));
                     }
                 }

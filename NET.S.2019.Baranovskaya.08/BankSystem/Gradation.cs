@@ -1,17 +1,40 @@
-﻿namespace BankSystem
+﻿// <copyright file="Gradation.cs" company="companyName">
+// Copyright (c) companyName. All rights reserved.
+// </copyright>
+namespace BankSystem
 {
     /// <summary>
-    /// Abstract class thas describes gradatoin of the bank account
+    /// Abstract class that describes gradation of the bank account
     /// </summary>
-    abstract public class Gradation
+    public abstract class Gradation
     {
-        public  abstract string Name { get; }
+        /// <summary>
+        /// Gets string representation of the gradation name
+        /// </summary>
+        public abstract string Name { get; }
 
-        public abstract int withdrawCost { get; }
-        public abstract int depositCost { get; }
+        /// <summary>
+        /// Gets cost of the withdrawing
+        /// </summary>
+        public abstract int WithdrawCost { get; }
 
+        /// <summary>
+        /// Gets cost of the depositing
+        /// </summary>
+        public abstract int DepositCost { get; }
+
+        /// <summary>
+        /// Calculates bonus score size after making a deposit
+        /// </summary>
+        /// <param name="money">money amount</param>
+        /// <returns>bonus score size</returns>
         public abstract int GetBonusScoreIncrease(int money);
-        public abstract int GetBonusScoreDecrease(int money);
 
+        /// <summary>
+        /// Calculates bonus score size after withdrawing 
+        /// </summary>
+        /// <param name="money">money amount</param>
+        /// <returns>bonus score size</returns>
+        public abstract int GetBonusScoreDecrease(int money);
     }
 }
