@@ -6,6 +6,7 @@ namespace BookListService
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using System.Linq;
 
     /// <summary>
     /// Contains method for the Book class
@@ -18,47 +19,6 @@ namespace BookListService
         public BookService()
         {
             this.BookListStorage = new List<Book>();
-        }
-
-        /// <summary>
-        /// Describes book parameters types 
-        /// </summary>
-        public enum Tag
-        {
-            /// <summary>
-            /// unique number
-            /// </summary>
-            ISBN,
-
-            /// <summary>
-            /// author of the book
-            /// </summary>
-            Author,
-
-            /// <summary>
-            /// name of the book
-            /// </summary>
-            Name,
-
-            /// <summary>
-            /// name of the publishing house
-            /// </summary>
-            PublishingHouse,
-
-            /// <summary>
-            /// production year of the book
-            /// </summary>
-            Year,
-
-            /// <summary>
-            /// number of pages
-            /// </summary>
-            PageNum,
-
-            /// <summary>
-            /// price of the book
-            /// </summary>
-            Price
         }
 
         /// <summary>
@@ -143,22 +103,14 @@ namespace BookListService
 
             foreach (Book book in this.BookListStorage)
             {
-                if ((tag.ToString().CompareTo("Author") == 0) && 
-                           (book.Author.CompareTo(parameter) == 0))
+                if ((tag.ClassName.CompareTo("Author") == 0) && (book.Author.CompareTo(parameter) == 0))
                 {
                     resultList.Add(book);
                 }
 
-                if ((tag.ToString().CompareTo("Name") == 0) &&
-                           (book.Name.CompareTo(parameter) == 0))
+                if ((tag.ToString().CompareTo("Name") == 0) && (book.Name.CompareTo(parameter) == 0))
                 {
                     resultList.Add(book);
-                }
-
-                if ((tag.ToString().CompareTo("PublishingHouse") == 0) &&
-                                      (book.Name.CompareTo(parameter) == 0))
-                {
-                    resultList.Add(book);                
                 }
             }
 
@@ -166,31 +118,18 @@ namespace BookListService
         }
 
         /// <summary>
-        /// Find all books with given integer parameter
+        /// Find all books with given double parameter
         /// </summary>
         /// <param name="tag">type of searching parameter</param>
-        /// <param name="parameter">input string for searching</param>
+        /// <param name="parameter">input double value for searching</param>
         /// <returns>list of all matches</returns>
-        public List<Book> FindBookByTag(Tag tag, int parameter)
+        public List<Book> FindBookByTag(Tag tag, double parameter)
         {
             List<Book> resultList = new List<Book>();
 
             foreach (Book book in this.BookListStorage)
             {
-                if (tag.ToString().CompareTo("ISBN") == 0 &&
-                                   book.ISBN == parameter)
-                {
-                    resultList.Add(book);
-                }
-
-                if (tag.ToString().CompareTo("Year") == 0 &&
-                                   book.Year == parameter)
-                {
-                    resultList.Add(book);
-                }
-
-                if (tag.ToString().CompareTo("PageNum") == 0 &&
-                                   book.PageNum == parameter)
+                if (tag.ClassName.CompareTo("price") == 0 && Math.Abs(book.Price - parameter) < 0.02)
                 {
                     resultList.Add(book);
                 }
@@ -205,19 +144,7 @@ namespace BookListService
         /// <param name="tag">given tag</param>
         public void SortBooksByTag(Tag tag)
         {
-            for (int j = 0; j < this.BookListStorage.Count - 1; j++)
-            {
-                for (int i = 0; i < this.BookListStorage.Count - 1; i++)
-                {
-                    // only by isbn
-                    if (this.BookListStorage[i].CompareTo(this.BookListStorage[i + 1]) < 0) 
-                    {
-                        Book buf = this.BookListStorage[i + 1];
-                        this.BookListStorage[i + 1] = this.BookListStorage[i];
-                        this.BookListStorage[i] = buf;
-                    }
-                }
-            }
+            BookListStorage = tag.Sort(BookListStorage).ToList();
         }
         
         /// <summary>

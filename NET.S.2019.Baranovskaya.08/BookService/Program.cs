@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using BookListService;
+    using BookListService.SortingTags;
 
     public class Program
     {
@@ -58,16 +59,16 @@
             }
 
             Console.WriteLine("Try to print 1 book with Name = 'Сборник поэм'...");
-            List<Book> bookList = bookService.FindBookByTag(BookService.Tag.Name, "Сборник поэм");
+            List<Book> bookList = bookService.FindBookByTag(new Author(), "Сборник поэм");
 
             foreach (Book book in bookList)
             {
                 Console.WriteLine(book.ToString());
             }
 
-            Console.WriteLine("Try to print 2 book with Year = 2016...");
+            Console.WriteLine("Try to print 2 book with price = 9,44...");
 
-            List<Book> bookList2 = bookService.FindBookByTag(BookService.Tag.Year, 2016);
+            List<Book> bookList2 = bookService.FindBookByTag(new Price(), 9.44);
 
             foreach (Book book in bookList2)
             {
@@ -82,6 +83,13 @@
             Console.WriteLine();
 
             Console.WriteLine("Try to print 4 books...");
+
+            bookService2.PrintBookList();
+
+            Console.WriteLine("Try to sort 4 books by price...");
+
+            //List<Book> bookList3 = 
+                bookService2.SortBooksByTag(new Price());
 
             bookService2.PrintBookList();
             Console.ReadKey();
