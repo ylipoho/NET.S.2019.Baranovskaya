@@ -1,15 +1,14 @@
-﻿// <copyright file="Book.cs" company="companyName">
-// Copyright (c) companyName. All rights reserved.
-// </copyright>
-namespace BookListService
+﻿namespace BookListService
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
+    using System.Text;
 
     /// <summary>
     /// Class that describes the book
     /// </summary>
-    public class Book : IComparable, IEquatable<Book>
+    public class Book : AbstractBook, IComparable, IEquatable<Book>, IFormattable
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Book"/> class
@@ -32,40 +31,73 @@ namespace BookListService
             this.Price = price;
         }
 
-        /// <summary>
-        /// Gets unique number of the book
-        /// </summary>
         public int ISBN { get; }
 
-        /// <summary>
-        /// Gets author of the book
-        /// </summary>
         public string Author { get; }
 
-        /// <summary>
-        /// Gets name of the book
-        /// </summary>
         public string Name { get; }
 
-        /// <summary>
-        /// Gets publishing house of the book
-        /// </summary>
         public string PublishingHouse { get; }
 
-        /// <summary>
-        /// Gets year of the book
-        /// </summary>
         public int Year { get; }
 
-        /// <summary>
-        /// Gets number of pages 
-        /// </summary>
         public int PageNum { get; }
 
-        /// <summary>
-        /// Gets or sets price of the book
-        /// </summary>
         public double Price { get; set; }
+        
+        /// <summary>
+        /// Returns string representation of the instance
+        /// </summary>
+        /// <param name="format">space-separated format. Enable: i, a, n, ph, y, pa, pr</param>
+        /// <param name="provider">IFormatProvider instance</param>
+        /// <returns>string representation of the object</returns>
+        public string ToString(string format, IFormatProvider provider)
+        {
+            if (String.IsNullOrEmpty(format))
+            {
+                return this.ToString();
+            }
+
+            if (provider == null)
+            {
+                provider = CultureInfo.CurrentCulture;
+            }
+
+            StringBuilder result = new StringBuilder();
+            string[] formats = format.Split(' ');
+
+            foreach (string option in formats)
+            {
+                switch (option)
+                {
+                    case "i":
+                        result.AppendFormat("ISBN: {0}, ", this.ISBN.ToString(provider));
+                        break;
+                    case "a":
+                        result.AppendFormat("author: {0}, ", this.Author.ToString(provider));
+                        break;
+                    case "n":
+                        result.AppendFormat("name: {0}, ", this.Name.ToString(provider));
+                        break;
+                    case "ph":
+                        result.AppendFormat("publishing house: {0}, ", this.PublishingHouse.ToString(provider));
+                        break;
+                    case "y":
+                        result.AppendFormat("year: {0}, ", this.Year.ToString(provider));
+                        break;
+                    case "pa":
+                        result.AppendFormat("{0} pages, ", this.PageNum.ToString(provider));
+                        break;
+                    case "pr":
+                        result.AppendFormat("price: {0}, ", Math.Round(this.Price, 2).ToString(provider));
+                        break;
+                    default:
+                        throw new ArgumentException("Unexpected format");
+                }
+            }
+            
+            return result.Remove(result.Length-2, 2).ToString();
+        }
         
         #region interface methods
         /// <summary>
@@ -126,7 +158,7 @@ namespace BookListService
         public override string ToString()
         {
             return string.Format(
-                "isbn: {0}, author: {1}, name: \"{2}\", publising house: \"{3}\", year: {4}, pages: {5}, price: {6}", 
+                "isbn: {0}, author: {1}, name: '{2}', publising house: '{3}', year: {4}, pages: {5}, price: {6}", 
                 this.ISBN, 
                 this.Author, 
                 this.Name, 
@@ -136,7 +168,6 @@ namespace BookListService
                 this.Price
                 );
         }
-
 
         /// <summary>
         /// Determines if the underlying system type of the current System.Type is the same
@@ -190,7 +221,7 @@ namespace BookListService
             hashCode = hashCode * -1521134295 + PageNum.GetHashCode();
             return hashCode;
         }
-        
+
         #endregion
     }
 }
