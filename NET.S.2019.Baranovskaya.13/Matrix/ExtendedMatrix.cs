@@ -23,7 +23,7 @@ namespace GenericMatrix
             {
                 newMatrix = new SquareMatrix<T>(first.Size);
 
-                for (int i=0; i<first.Size; i++)
+                for (int i = 0; i < first.Size; i++)
                 {
                     for (int j = 0; j < first.Size; j++)
                     {

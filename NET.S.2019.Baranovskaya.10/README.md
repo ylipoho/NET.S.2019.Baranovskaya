@@ -1,38 +1,44 @@
 ## Description 
 
-1. Develop a Book class (ISBN, author, title, publisher, year of publication,
-number of pages, price), overriding for it the necessary Object class methods. 
-For class objects implement equivalence and order relations. (using appropriate 
-interfaces). To perform basic operations with
-a list of books that can be downloaded and, if necessary,
-save to some BookListStorage storage; develop BookListService class
-(as a service for working with a collection of books) with functionality: 
-● AddBook  (add a book if there is no such book, otherwise throw an exception); 
-● RemoveBook (remove the book if it is, otherwise throw an exception);
-● FindBookByTag (find a book by a given criterion); 
-● SortBooksByTag (sort list of books by a given criterion).
+### Task 1. Book
 
-Usebinary file as storage, to work with it use only the classes BinaryReader,
-BinaryWriter. Storage can be changed / added later.
+Implement for Book class objects the possibility of a different string representation.
+
+For example, object: ISBN = 978-0-7356-6745-7, AuthorName
+= Jeffrey Richter, Title = CLR via C#, Publisher = Microsoft Press, Year = 2012,
+NumberOPpages = 826, Price = 59.99$  can be displayed as:
+
+* Jeffrey Richter, CLR via C#
+* Jeffrey Richter, CLR via C#, &quot;Microsoft Press&quot;, 2012
+* ISBN 13: 978-0-7356-6745-7, Jeffrey Richter, CLR via C#, &quot;Microsoft Press&quot;,
+2012, P. 826.
+* Jeffrey Richter, CLR via C#, &quot;Microsoft Press&quot;, 2012
+* ISBN 13: 978-0-7356-6745-7, Jeffrey Richter, CLR via C#, &quot;Microsoft Press&quot;,
+2012, P. 826., 59.99$.
 
 
-2. Develop a type system for describing work with a bank account. condition
-account is determined by its number, data on the account holder (name, surname), amount
-on the account and some bonus points that increase / decrease
-each time you refill an account / debit an account with values ​​different for
-replenishment and write-off and calculated depending on some values
-values ​​of the "value" of the balance and the "cost" of replenishment. The value of "cost"
-balance and replenishment “costs” are integer values ​​and depend on
-from the gradation of the account.
+### Task 2. Book
 
-To work with the account to realize the following features:
-● make a deposit to the account;
-● write off the account;
-● create a new account;
-● close an account.
-Information about the accounts stored in a binary file.
+Without changing the class Book, add additional objects for this class.
+formatting capability not originally provided by the class.
 
-Take into account that the functionality may expand or change:
-● adding new types of accounts;
-● change / add sources of information storage about accounts;
-● change the logic of calculating bonus points.
+### Task 3. Book
+
+Create Unit-tests for the functionalities implemented in the first and second tasks.
+
+### Task 4. GCD
+
+Perform class refactoring (to reduce re-code) in algorithms
+Euclid (for refactoring to use delegates, refactoring is possible only in
+case when all methods are in the same class!). Class interface does not change
+should.
+Perform class refactoring (to reduce re-code) in Euclid algorithms using delegates. Class interface shouldn't change.
+
+### Task 5. Sorting
+
+Work with Sorting class that get interface IComparer<int> as acomparator:
+
+* add method that take delegate comparator as a parameter and encapsulate the logic of comparison of rows of the matrix.
+* test this method using previous comparison criteria. 
+Implement a class in two ways: "Closing" in the first embodiment, the implementation of the method of sorting with the delegate to the method with
+interface, and the opposite in the second way.

@@ -9,6 +9,16 @@ namespace MatrixConsoleApplication
 {
     class Program
     {
+        public static void Handler1(int value, int i, int j)
+        {
+            Console.WriteLine(string.Format("new int value '{0}' at [{1}, {2}]", value, i, j));
+        }
+
+        public static void Handler2(string value, int i, int j)
+        {
+            Console.WriteLine(string.Format("new string value '{0}' at [{1}, {2}]", value, i, j));
+        }
+
         static void Main(string[] args)
         {
             SymmetricalMatrix<string> symMatrix = new SymmetricalMatrix<string>(3);
@@ -23,29 +33,19 @@ namespace MatrixConsoleApplication
 
             DiagonalMatrix<int> diagMatrix = new DiagonalMatrix<int>(values);
 
-            SquareMatrix<int>.matrixDelegate del = diagMatrix.Method;
+            SquareMatrix<int>.MatrixDelegate del = diagMatrix.Method;
 
             diagMatrix.MatrixEvent += Handler1;
 
             diagMatrix[3, 3] = 17;
 
-            SquareMatrix<int> sqMatrix= new SquareMatrix<int>(4);
+            SquareMatrix<int> sqMatrix = new SquareMatrix<int>(4);
             sqMatrix[0, 1] = 12;
             sqMatrix[3, 0] = 78;
 
             SquareMatrix<int> newMatrix = ExtendedMatrix<int>.GetSum(sqMatrix, diagMatrix);
 
             Console.ReadLine();
-        }
-
-        public static void Handler1(int value, int i, int j)
-        {
-            Console.WriteLine(string.Format("new int value '{0}' at [{1}, {2}]", value, i, j));
-        }
-
-        public static void Handler2(string value, int i, int j)
-        {
-            Console.WriteLine(string.Format("new string value '{0}' at [{1}, {2}]", value, i, j));
         }
     }
 }

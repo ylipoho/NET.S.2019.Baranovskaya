@@ -8,7 +8,7 @@ namespace GenericMatrix
         {
         }
 
-        public SymmetricalMatrix(int size) : base (size)
+        public SymmetricalMatrix(int size) : base(size)
         {
         }
 
@@ -18,7 +18,7 @@ namespace GenericMatrix
             
             for (int i = 0; i < values.GetLength(0); i++)
             {
-                for (int j=i+1; j<values.GetLength(0); j++)
+                for (int j = i + 1; j < values.GetLength(0); j++)
                 {
                     if (!values[i, j].Equals(values[j, i]))
                     {
@@ -27,7 +27,7 @@ namespace GenericMatrix
                 }
             }
 
-            matrix = values;
+            this.matrix = values;
         }
 
         public new T this[int i, int j]
@@ -36,13 +36,13 @@ namespace GenericMatrix
 
             set
             {
-                matrix[i, j] = value;
-                CallDelegates(value, i, j);
+                this.matrix[i, j] = value;
+                this.CallDelegates(value, i, j);
 
                 if (i != j)
                 {
-                    matrix[j, i] = value;
-                    CallDelegates(value, j, i);
+                    this.matrix[j, i] = value;
+                    this.CallDelegates(value, j, i);
                 }
             }
         }
