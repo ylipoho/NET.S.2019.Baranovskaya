@@ -7,18 +7,23 @@ namespace BookListService
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
+    using NLog;
 
     /// <summary>
     /// Contains method for the Book class
     /// </summary>
     public class BookService
     {
+        private Logger logger;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="BookService"/> class
         /// </summary>
         public BookService()
         {
             this.BookListStorage = new List<Book>();
+            logger = LogManager.GetCurrentClassLogger();
+            logger.Info("book service created");
         }
 
         /// <summary>
@@ -32,6 +37,8 @@ namespace BookListService
         /// <param name="path">file path</param>
         public void LoadBookListStorageFromBinaryFile(string path)
         {
+            logger.Info("attempt to load book list from binary file");
+
             using (FileStream fs = new FileStream(path, FileMode.Open))
             {
                 using (BinaryReader br = new BinaryReader(fs))
@@ -58,6 +65,8 @@ namespace BookListService
         /// <param name="path">file path</param>
         public void SaveBookListStorageFromBinaryFile(string path)
         {
+            logger.Info("attempt to save book list to binary file");
+
             using (BinaryWriter bw = new BinaryWriter(File.Open(path, FileMode.Create)))
             {
                 foreach (Book book in this.BookListStorage)
@@ -78,6 +87,7 @@ namespace BookListService
         /// </summary>
         public void PrintBookList()
         {
+            logger.Info("attempt to print a book list");
             if (this.BookListStorage.Count == 0)
             {
                 Console.WriteLine("Book list is empty.");
@@ -99,6 +109,7 @@ namespace BookListService
         /// <returns>list of all matches</returns>
         public List<Book> FindBookByTag(Tag tag, string parameter)
         {
+            logger.Info("attempt to find books by tag");
             List<Book> resultList = new List<Book>();
 
             foreach (Book book in this.BookListStorage)
@@ -125,6 +136,7 @@ namespace BookListService
         /// <returns>list of all matches</returns>
         public List<Book> FindBookByTag(Tag tag, double parameter)
         {
+            logger.Info("attempt to find books by tag");
             List<Book> resultList = new List<Book>();
 
             foreach (Book book in this.BookListStorage)
@@ -134,7 +146,7 @@ namespace BookListService
                     resultList.Add(book);
                 }
             }
-
+            
             return resultList;
         }
 
@@ -144,6 +156,7 @@ namespace BookListService
         /// <param name="tag">given tag</param>
         public void SortBooksByTag(Tag tag)
         {
+            logger.Info("booklist sorting");
             BookListStorage = tag.Sort(BookListStorage).ToList();
         }
         
@@ -155,15 +168,19 @@ namespace BookListService
         /// <exception cref="ArgumentException">if given book already exists in the book list</exception>
         public bool AddBook(Book book)
         {
+            logger.Info("attempt to add a book");
             int? index;
 
             if ((index = this.FindBook(book)) == null)
             {
                 this.BookListStorage.Add(book);
+                logger.Info("book added");
                 return true;
             }
 
+            logger.Error("attempt to add an existing book");
             throw new ArgumentException("Already exists.");
+            
         }
 
         /// <summary>
@@ -174,14 +191,16 @@ namespace BookListService
         /// <exception cref="ArgumentException">if book list doesn't contain given book</exception>
         public bool RemoveBook(Book book)
         {
+            logger.Info("attempt to remove a book");
             int? index;
 
             if ((index = this.FindBook(book)) != null)
             {
                 this.BookListStorage.Remove(this.BookListStorage[(int)index]);
+                logger.Info("book removed");
                 return true;
             }
-
+            logger.Error("attempt to find a book that doesn't exist");
             throw new ArgumentException("Doesn't contain this book.");
         }
 
@@ -192,14 +211,17 @@ namespace BookListService
         /// <returns>index of book, if list contains this book; otherwise, null</returns>
         private int? FindBook(Book book)
         {
+            logger.Info("attempt to find a book index");
+
             for (int i = 0; i < this.BookListStorage.Count; i++)
             {
                 if (book.Equals(this.BookListStorage[i]))
                 {
+                    logger.Info("book found");
                     return i;
                 }
             }
-
+            logger.Info("book not found");
             return null;
         }
     }
