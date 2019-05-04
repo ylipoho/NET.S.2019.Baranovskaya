@@ -1,44 +1,60 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Timers;
+using Timer;
 
 namespace TimerTask
 {
     public class Timer
     {
-        public delegate void Del(string message);
+        public delegate void Handler(object sender, ClockEventArgs e);
+                
+        public event Handler TimeOut;
+        
+        private int _time;
 
-        public static event Del TimeOut;
+        private System.Timers.Timer _timer;
+        
+        public int Time
+        {
+            get => _time;
 
-        System.Timers.Timer _timer;
+            private set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("invalid value");
+                }
 
-        public bool isGo;
-
-        public int Time { get; }
+                _time = value;
+            }
+        }
 
         public Timer(int time)
         {
-            Time = time;
-            _timer = new System.Timers.Timer(Time);
+            _timer = new System.Timers.Timer(time);
+            _timer.Elapsed += new ElapsedEventHandler(EndTimer);
         }
 
-        public void SetTimer(int Time)
+        public void SetTimer(int time)
         {
-            _timer = new System.Timers.Timer(Time);
+            _timer = new System.Timers.Timer(time);            
+            _timer.Elapsed += new ElapsedEventHandler(EndTimer);
         }
+
         public void Start()
         {
             _timer.Start();
         }
 
-        private static void OnTimedEvent(Object source, ElapsedEventArgs e)
+        private void EndTimer(object sender, ElapsedEventArgs e)
         {
-            // вызвать событие и передать ему нужжную инфу
-            TimeOut("time is out");
-            
+            _timer.Stop();
+            DoTimeOut(this, new ClockEventArgs(Time));
+        }
+
+        private void DoTimeOut(object sender, ClockEventArgs e)
+        { 
+            TimeOut?.Invoke(sender, e);            
         }
     }
 }
